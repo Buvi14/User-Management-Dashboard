@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f3f3f3;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container .project-info {
+  display: flex;
+}
+.project-details {
+  margin: 35px;
+  background: #ffff;
+  height: 14vh;
+  width: 25%;
+  border-radius: 5px;
+}
+
+.project-details .no-of-projects {
+  margin: 19px 0 10px 12px;
+  font-size: 2vw;
+  font-weight: bold;
+}
+.project-details p {
+  margin-left: 12px;
+  font-size: 18px;
+}
+.new-project {
+  display: flex;
+  justify-content: center;
+}
+
+.new-project button {
+  width: 17%;
+  padding: 10px;
+  background: #67be6a;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+}
+.modal {
+  display: none; /* Hidden by default */
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 50%; /* Full width */
+  height: 50%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: #74bb74;
+  color: white;
+  padding: 50px;
+  left: 25%;
+  top: 25%;
+}
+.modal .name {
+  font-size: 22px;
+  font-weight: bold;
+  padding: 10px;
+}
+.modal .name label {
+  margin-right: 11px;
+}
+.modal .name input {
+  outline: none;
+  border: none;
+  height: 30px;
+  width: 20vw;
+  border-radius: 4px;
+}
+
+.modal .times {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.modal .submit {
+  height: 35px;
+  width: 15vw;
+  border: none;
+  color: #ffff;
+  background: #d47070;
+  border-radius: 3px;
+  font-size: 18px;
+}
+
+.project-info input {
+  margin-top: 20px;
+  margin-left: 12px;
+  border: none;
+  border-bottom: 1px solid;
+  padding: 3px;
+  outline: none;
+}
+
+.project-details i {
+  color: white;
+  background: red;
+  height: 17px;
+  width: 15px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.data-table {
+  width: 94vw;
+  margin: 40px;
+  overflow-x: auto;
+}
+
+.data-table table {
+  width: 100%;
+  background: #fff;
+  border-radius: 5px;
+}
+
+table,
+tr,
+th {
+  border-bottom: 1px solid rgb(185, 181, 181);
+  border-collapse: collapse;
+}
+tr {
+  height: 40px;
+}
+td,
+th {
+  text-align: left;
+  margin-left: 10px;
+  padding: 10px 10px 15px 15px;
+}
+
+.team img {
+  width: 30px;
+  border-radius: 20px;
+}
+
+.bar {
+  height: 5px;
+  background: #67be6a;
+  margin-top: 8px;
+  border-radius: 2px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.action span i {
+  width: 40%;
+  font-size: 18px;
+}
+
+.pencil {
+  color: #67be6a;
+}
+.times {
+  color: #e11b1bde;
+}

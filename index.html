@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Style/Style.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <title>User Management</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="project-info">
+        <div class="project-details">
+          <div class="no-of-projects">24</div>
+          <p>Total Projects</p>
+        </div>
+        <div class="project-details">
+          <div class="no-of-projects">18</div>
+          <p>Completed Projects</p>
+        </div>
+        <div class="project-details">
+          <div class="no-of-projects">06</div>
+          <p>Pending Projects</p>
+        </div>
+        <div class="project-details">
+          <p>Search</p>
+          <input
+            type="text"
+            name="Search"
+            placeholder="Search..."
+            id="search"
+          />
+          <i class="fas fa-search" onclick="filterData()"></i>
+        </div>
+      </div>
+      <div class="new-project">
+        <button onclick="openModal()">Add New</button>
+      </div>
+      <div class="modal" id="myModal">
+        <div class="times">
+          <i class="fas fa-times" onclick="closeModal()"></i>
+        </div>
+        <div class="name">
+          <label for="Project Name">Project Name</label>
+          <input type="text" placeholder="Enter Project Name" />
+        </div>
+        <div class="name">
+          <label for="Project Name">Enter the Date</label>
+          <input type="date" placeholder="Enter date" />
+        </div>
+        <div class="name">
+          <label for="Project Name"> Enter Status</label>
+          <input type="Status" placeholder="Initially put pending" />
+        </div>
+        <button
+          class="submit"
+          type="button"
+          onclick="closeModal()"
+          placeholder="Submit"
+          value="Submit"
+        >
+          Submit
+        </button>
+      </div>
+      <div class="data-table">
+        Static data
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Projects</th>
+              <th>Start Date</th>
+              <th>Status</th>
+              <th>Team</th>
+              <th>Progress</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>New Admin Design</td>
+              <td>25-05-2019</td>
+              <td class="status" style="color: #67be6a">Completed</td>
+              <td class="team">
+                <img
+                  src="https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-1.jpg"
+                  alt="avatar"
+                />
+                <img
+                  src="https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-2.jpg"
+                  alt="avatar"
+                />
+                <img
+                  src="https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-4.jpg"
+                  alt="avatar"
+                />
+              </td>
+              <td class="progress">
+                <div class="header">
+                  <p>Progress</p>
+                  <p class="progres-completed">100%</p>
+                </div>
+                <div class="bar"></div>
+              </td>
+              <td class="action">
+                <span class="pencil"><i class="fas fa-pencil-alt"></i></span>
+                <span class="times"><i class="fas fa-times"></i></span>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>ReDesign: Landing Page</td>
+              <td>30-05-2019</td>
+              <td class="status" style="color: rgb(71 96 176 / 75%)">
+                Pending
+              </td>
+              <td class="team">
+                <img
+                  src="https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-1.jpg"
+                  alt="avatar"
+                />
+                <img
+                  src="https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-2.jpg"
+                  alt="avatar"
+                />
+                <img
+                  src="https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-4.jpg"
+                  alt="avatar"
+                />
+              </td>
+              <td class="progress">
+                <div class="header">
+                  <p>Progress</p>
+                  <p class="progres-completed">68%</p>
+                </div>
+                <div
+                  class="bar"
+                  style="width: 68%; background: rgb(71 96 176 / 75%)"
+                ></div>
+              </td>
+              <td class="action">
+                <span class="pencil"><i class="fas fa-pencil-alt"></i></span>
+                <span class="times"><i class="fas fa-times"></i></span>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Aboutus Design</td>
+              <td>21-05-2019</td>
+              <td class="status" style="color: #67be6a">Completed</td>
+              <td class="team">
+                <img
+                  src="https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-1.jpg"
+                  alt="avatar"
+                />
+                <img
+                  src="https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-2.jpg"
+                  alt="avatar"
+                />
+                <img
+                  src="https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-4.jpg"
+                  alt="avatar"
+                />
+              </td>
+              <td class="progress">
+                <div class="header">
+                  <p>Progress</p>
+                  <p class="progres-completed">100%</p>
+                </div>
+                <div class="bar"></div>
+              </td>
+              <td class="action">
+                <span class="pencil"><i class="fas fa-pencil-alt"></i></span>
+                <span class="times"><i class="fas fa-times"></i></span>
+              </td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Contact Page Design</td>
+              <td>21-05-2020</td>
+              <td class="status" style="color: rgb(71 96 176 / 75%)">
+                Pending
+              </td>
+              <td class="team">
+                <img
+                  src="https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-1.jpg"
+                  alt="avatar"
+                />
+                <img
+                  src="https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-2.jpg"
+                  alt="avatar"
+                />
+                <img
+                  src="https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-4.jpg"
+                  alt="avatar"
+                />
+              </td>
+              <td class="progress">
+                <div class="header">
+                  <p>Progress</p>
+                  <p class="progres-completed">70%</p>
+                </div>
+                <div
+                  class="bar"
+                  style="width: 70%; color: rgb(71 96 176 / 75%)"
+                ></div>
+              </td>
+              <td class="action">
+                <span class="pencil"><i class="fas fa-pencil-alt"></i></span>
+                <span class="times"><i class="fas fa-times"></i></span>
+              </td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>UserPage Design</td>
+              <td>19-10-2021</td>
+              <td class="status" style="color: rgb(71 96 176 / 75%)">
+                Pending
+              </td>
+              <td class="team">
+                <img
+                  src="https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-1.jpg"
+                  alt="avatar"
+                />
+                <img
+                  src="https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-2.jpg"
+                  alt="avatar"
+                />
+                <img
+                  src="https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-4.jpg"
+                  alt="avatar"
+                />
+              </td>
+              <td class="progress">
+                <div class="header">
+                  <p>Progress</p>
+                  <p class="progres-completed">35%</p>
+                </div>
+                <div
+                  class="bar"
+                  style="width: 35%; background: rgb(71 96 176 / 75%)"
+                ></div>
+              </td>
+              <td class="action">
+                <span class="pencil"><i class="fas fa-pencil-alt"></i></span>
+                <span class="times"><i class="fas fa-times"></i></span>
+              </td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Landing Page Design</td>
+              <td>04-05-2019</td>
+              <td class="status" style="color: rgb(71 96 176 / 75%)">
+                Pending
+              </td>
+              <td class="team">
+                <img
+                  src="https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-1.jpg"
+                  alt="avatar"
+                />
+                <img
+                  src="https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-2.jpg"
+                  alt="avatar"
+                />
+                <img
+                  src="https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-4.jpg"
+                  alt="avatar"
+                />
+              </td>
+              <td class="progress">
+                <div class="header">
+                  <p>Progress</p>
+                  <p class="progres-completed">78%</p>
+                </div>
+                <div
+                  class="bar"
+                  style="width: 78%; color: rgb(71 96 176 / 75%)"
+                ></div>
+              </td>
+              <td class="action">
+                <span class="pencil"><i class="fas fa-pencil-alt"></i></span>
+                <span class="times"><i class="fas fa-times"></i></span>
+              </td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>MultiPurpose Landing template</td>
+              <td>10-05-2019</td>
+              <td class="status" style="color: rgb(71 96 176 / 75%)">
+                Pending
+              </td>
+              <td class="team">
+                <img
+                  src="https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-4.jpg"
+                  alt="avatar"
+                />
+                <img
+                  src="https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-5.jpg"
+                  alt="avatar"
+                />
+                <img
+                  src="https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-3.jpg"
+                  alt="avatar"
+                />
+              </td>
+              <td class="progress">
+                <div class="header">
+                  <p>Progress</p>
+                  <p class="progres-completed">90%</p>
+                </div>
+                <div
+                  class="bar"
+                  style="width: 90%; background: rgb(71 96 176 / 75%)"
+                ></div>
+              </td>
+              <td class="action">
+                <span class="pencil"><i class="fas fa-pencil-alt"></i></span>
+                <span class="times"><i class="fas fa-times"></i></span>
+              </td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Blog template Design</td>
+              <td>02-05-2019</td>
+              <td class="status" style="color: #67be6a">Completed</td>
+              <td class="team">
+                <img
+                  src="https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-1.jpg"
+                  alt="avatar"
+                />
+                <img
+                  src="https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-2.jpg"
+                  alt="avatar"
+                />
+                <img
+                  src="https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-4.jpg"
+                  alt="avatar"
+                />
+              </td>
+              <td class="progress">
+                <div class="header">
+                  <p>Progress</p>
+                  <p class="progres-completed">100%</p>
+                </div>
+                <div class="bar"></div>
+              </td>
+              <td class="action">
+                <span class="pencil"><i class="fas fa-pencil-alt"></i></span>
+                <span class="times"><i class="fas fa-times"></i></span>
+              </td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>Brand Logo Design</td>
+              <td>20-05-2020</td>
+              <td class="status" style="color: #67be6a">Completed</td>
+              <td class="team">
+                <img
+                  src="https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-1.jpg"
+                  alt="avatar"
+                />
+                <img
+                  src="https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-2.jpg"
+                  alt="avatar"
+                />
+                <img
+                  src="https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-4.jpg"
+                  alt="avatar"
+                />
+              </td>
+              <td class="progress">
+                <div class="header">
+                  <p>Progress</p>
+                  <p class="progres-completed">100%</p>
+                </div>
+                <div class="bar"></div>
+              </td>
+              <td class="action">
+                <span class="pencil"><i class="fas fa-pencil-alt"></i></span>
+                <span class="times"><i class="fas fa-times"></i></span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+  <script src="./script/script.js"></script>
+</html>
